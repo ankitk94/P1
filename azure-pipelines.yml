@@ -14,7 +14,7 @@ jobs:
    steps:
       - checkout: githubRepo1
       - checkout: self
-      - publish: artifact1.artifact
+      - publish: P1/artifact1.artifact
         artifact: A1
 
 #       - publish: artifact2.artifact
