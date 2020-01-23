@@ -12,8 +12,8 @@ jobs:
  - job: J1
    pool: default
    steps:
-      - checkout: githubRepo1
       - checkout: self
+      - checkout: githubRepo1
       - publish: P1/artifact1.artifact
         artifact: A1
 
