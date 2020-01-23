@@ -1,20 +1,31 @@
 
+resources:
+ repositories:
+   - repository: githubRepo1
+     type: GitHub
+     endpoint: GithubConnection
+     source: jainamanjain/Test2
+     name: jainamanjain/Test2
+
+
 jobs:
  - job: J1
    pool: default
    steps:
+      - checkout: self
+      - checkout: githubRepo1
       - publish: artifact1.artifact
         artifact: A1
 
-      - publish: artifact2.artifact
-        artifact: A2
+#       - publish: artifact2.artifact
+#         artifact: A2
 
- - job: J2
-   pool:
-    name: default
-   steps:
-      - publish: artifact3.artifact
-        artifact: A3
+#  - job: J2
+#    pool:
+#     name: default
+#    steps:
+#       - publish: artifact3.artifact
+#         artifact: A3
 
 #  - job: J3
 #    pool:
