@@ -24,10 +24,10 @@ jobs:
       - checkout: githubRepo1
       - checkout: bitbucket1
       - checkout: AzRepo1
-      - publish: P1/artifact1.artifact
+      - publish: Test2/artifact1.artifact
         artifact: A1
 
-      - publish: artifact2.artifact
+      - publish: Test2/artifact2.artifact
         artifact: A2
 
  - job: J2
@@ -37,7 +37,7 @@ jobs:
       - checkout: githubRepo1
       - checkout: bitbucket1
       - checkout: AzRepo1
-      - publish: artifact3.artifact
+      - publish: Test2/artifact3.artifact
         artifact: A3
 
  - job: J3
