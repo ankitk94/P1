@@ -31,7 +31,7 @@ jobs:
         artifact: A2
 
  - job: J2
-   pool:
+  #  pool:
     # name: default
    steps:
       - checkout: githubRepo1
