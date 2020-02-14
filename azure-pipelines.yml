@@ -13,12 +13,12 @@ resources:
      name: amja_bitbucket/bitbucketrepo
    - repository: AzRepo1
      type: git
-     name: AzureRepo1
+     name: AMJA_AzureRepoTest
 
 
 jobs:
  - job: J1
-   pool: default
+  #  pool: default
    steps:
       - checkout: self
       - checkout: githubRepo1
@@ -32,7 +32,7 @@ jobs:
 
  - job: J2
    pool:
-    name: default
+    # name: default
    steps:
       - checkout: githubRepo1
       - checkout: bitbucket1
@@ -41,8 +41,8 @@ jobs:
         artifact: A3
 
  - job: J3
-   pool:
-    name: default
+  #  pool:
+  #   name: default
    dependsOn: [J1, J2]
    steps:
       - checkout: self
@@ -57,7 +57,7 @@ jobs:
  - deployment: deploymentJob4
    environment: envionment4
    dependsOn: [J1, J2]
-   pool: default
+  #  pool: default
    strategy:
     runOnce:
       deploy:
