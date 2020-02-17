@@ -1,16 +1,16 @@
 
 resources:
  repositories:
-   - repository: githubRepo1
-     type: GitHub
-     endpoint: GithubConnection
-     source: amjn/Test2
-     name: amjn/Test2
-  #  - repository: bitbucket1
-  #    type: BitBucket
-  #    endpoint: BitBucketConnection
-  #    source: amja_bitbucket/bitbucketrepo
-  #    name: amja_bitbucket/bitbucketrepo
+  #  - repository: githubRepo1
+  #    type: GitHub
+  #    endpoint: GithubConnection
+  #    source: amjn/Test2
+  #    name: amjn/Test2
+   - repository: bitbucket1
+     type: BitBucket
+     endpoint: BitBucketConnection
+     source: amja_bitbucket/bitbucketrepo
+     name: amja_bitbucket/bitbucketrepo
   #  - repository: AzRepo1
   #    type: git
   #    name: AzureRepo1
@@ -21,7 +21,7 @@ jobs:
    pool: default
    steps:
       - checkout: self
-      - checkout: githubRepo1
+      # - checkout: githubRepo1
       # - checkout: bitbucket1
       # - checkout: AzRepo1
       - publish: P1/artifact1.artifact
@@ -30,29 +30,29 @@ jobs:
       - publish: P1/artifact2.artifact
         artifact: A2
 
- - job: J2
-   pool:
-    name: default
-   steps:
-      - checkout: githubRepo1
-      # - checkout: bitbucket1
-      # - checkout: AzRepo1
-      - publish: P1/artifact3.artifact
-        artifact: A3
+#  - job: J2
+#    pool:
+#     name: default
+#    steps:
+#       - checkout: githubRepo1
+#       # - checkout: bitbucket1
+#       # - checkout: AzRepo1
+#       - publish: P1/artifact3.artifact
+#         artifact: A3
 
- - job: J3
-   pool:
-    name: default
-   dependsOn: [J1, J2]
-   steps:
-      - checkout: self
-      - checkout: githubRepo1
-      # - checkout: bitbucket1
-      # - checkout: AzRepo1
-      - powershell: |
-            ls $(Build.ArtifactStagingDirectory)/
-      - download: current
-        artifact: A1
+#  - job: J3
+#    pool:
+#     name: default
+#    dependsOn: [J1, J2]
+#    steps:
+#       - checkout: self
+#       - checkout: githubRepo1
+#       # - checkout: bitbucket1
+#       # - checkout: AzRepo1
+#       - powershell: |
+#             ls $(Build.ArtifactStagingDirectory)/
+#       - download: current
+#         artifact: A1
 
 #  - deployment: deploymentJob4
 #    environment: envionment4
