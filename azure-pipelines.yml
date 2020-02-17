@@ -54,17 +54,17 @@ jobs:
       - download: current
         artifact: A1
 
- - deployment: deploymentJob4
-   environment: envionment4
-   dependsOn: [J1, J2]
-  #  pool: default
-   strategy:
-    runOnce:
-      deploy:
-       steps:
-        - checkout: self
-        - checkout: githubRepo1
-        - checkout: bitbucket1
-        - checkout: AzRepo1
-        - powershell: |
-            ls $(Build.ArtifactStagingDirectory)/
+#  - deployment: deploymentJob4
+#    environment: envionment4
+#    dependsOn: [J1, J2]
+#   #  pool: default
+#    strategy:
+#     runOnce:
+#       deploy:
+#        steps:
+#         - checkout: self
+#         - checkout: githubRepo1
+#         - checkout: bitbucket1
+#         - checkout: AzRepo1
+#         - powershell: |
+#             ls $(Build.ArtifactStagingDirectory)/
