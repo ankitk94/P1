@@ -13,7 +13,7 @@ resources:
      name: amja_bitbucket/bitbucketrepo
    - repository: AzRepo1
      type: git
-     name: AMJA_AzureRepoTest
+     name: AzureRepo1
 
 
 jobs:
