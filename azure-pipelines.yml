@@ -6,14 +6,14 @@ resources:
      endpoint: GithubConnection
      source: amjn/Test2
      name: amjn/Test2
-   - repository: bitbucket1
-     type: BitBucket
-     endpoint: BitBucketConnection
-     source: amja_bitbucket/bitbucketrepo
-     name: amja_bitbucket/bitbucketrepo
-   - repository: AzRepo1
-     type: git
-     name: AzureRepo1
+  #  - repository: bitbucket1
+  #    type: BitBucket
+  #    endpoint: BitBucketConnection
+  #    source: amja_bitbucket/bitbucketrepo
+  #    name: amja_bitbucket/bitbucketrepo
+  #  - repository: AzRepo1
+  #    type: git
+  #    name: AzureRepo1
 
 
 jobs:
@@ -22,8 +22,8 @@ jobs:
    steps:
       - checkout: self
       - checkout: githubRepo1
-      - checkout: bitbucket1
-      - checkout: AzRepo1
+      # - checkout: bitbucket1
+      # - checkout: AzRepo1
       - publish: P1/artifact1.artifact
         artifact: A1
 
@@ -35,8 +35,8 @@ jobs:
     name: default
    steps:
       - checkout: githubRepo1
-      - checkout: bitbucket1
-      - checkout: AzRepo1
+      # - checkout: bitbucket1
+      # - checkout: AzRepo1
       - publish: P1/artifact3.artifact
         artifact: A3
 
@@ -47,8 +47,8 @@ jobs:
    steps:
       - checkout: self
       - checkout: githubRepo1
-      - checkout: bitbucket1
-      - checkout: AzRepo1
+      # - checkout: bitbucket1
+      # - checkout: AzRepo1
       - powershell: |
             ls $(Build.ArtifactStagingDirectory)/
       - download: current
