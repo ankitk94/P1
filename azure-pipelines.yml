@@ -13,7 +13,7 @@ resources:
 
 jobs:
  - job: J1
-   pool: "Hosted VS2017"
+   pool: "Default"
    steps:
       - checkout: self
       - checkout: YamlAzureDevOps
@@ -26,7 +26,7 @@ jobs:
 
  - job: J2
    pool:
-    name: "Hosted VS2017"
+    name: "Default"
    steps:
       - checkout: self
       - checkout: DockerAzureFunction
