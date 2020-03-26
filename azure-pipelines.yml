@@ -35,6 +35,15 @@ jobs:
       - publish: P1/artifact3.artifact
         artifact: A3
 
+ - deployment: Deployment1
+   environment: ankhokha
+   pool: 'Default'
+   strategy:
+     runOnce:
+       deploy:
+         steps:
+         - download: current
+           artifact: A2
 
 #  - deployment: deploymentJob4
 #    environment: envionment4
