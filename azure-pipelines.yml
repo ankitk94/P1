@@ -29,7 +29,7 @@ jobs:
     name: "Default"
    steps:
       - checkout: self
-      - download:
+      - download: current
         artifact: A2
       - checkout: DockerAzureFunction
       - publish: P1/artifact3.artifact
